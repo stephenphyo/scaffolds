@@ -13,7 +13,7 @@ const connectMongoDB = (CONNECTION_STRING) => {
         .catch((err) => {
             attempt++;
             console.error(`Attempt #${attempt} => Error: ${err.message}`);
-            setTimeout(retryMongooseConn, 5000);
+            setTimeout(connectMongoDB, 5000);
         })
 };
 
